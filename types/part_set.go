@@ -7,9 +7,9 @@ import (
 	"io"
 	"sync"
 
+	"github.com/tendermint/go-crypto/merkle"
+	"github.com/tendermint/go-crypto/tmhash"
 	cmn "github.com/tendermint/tmlibs/common"
-	"github.com/tendermint/tmlibs/merkle"
-	"github.com/tendermint/tmlibs/merkle/tmhash"
 )
 
 var (

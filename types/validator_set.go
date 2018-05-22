@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	cmn "github.com/tendermint/tmlibs/common"
-	"github.com/tendermint/tmlibs/merkle"
+	"github.com/tendermint/go-crypto/merkle"
 )
 
 // ValidatorSet represent a set of *Validator at a given height.
