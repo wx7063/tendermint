@@ -113,14 +113,14 @@ performance, or otherwise enjoy programming, you may implement your own
 ABCI server using the Tendermint Socket Protocol, known affectionately
 as Teaspoon. The first step is still to auto-generate the relevant data
 types and codec in your language using ``protoc``. Messages coming over
-the socket are Protobuf3 encoded, but additionally length-prefixed to
-facilitate use as a streaming protocol. Protobuf3 doesn't have an
+the socket are proto3 encoded, but additionally length-prefixed to
+facilitate use as a streaming protocol. proto3 doesn't have an
 official length-prefix standard, so we use our own. The first byte in
 the prefix represents the length of the Big Endian encoded length. The
 remaining bytes in the prefix are the Big Endian encoded length.
 
-For example, if the Protobuf3 encoded ABCI message is 0xDEADBEEF (4
-bytes), the length-prefixed message is 0x0104DEADBEEF. If the Protobuf3
+For example, if the proto3 encoded ABCI message is 0xDEADBEEF (4
+bytes), the length-prefixed message is 0x0104DEADBEEF. If the proto3
 encoded ABCI message is 65535 bytes long, the length-prefixed message
 would be like 0x02FFFF....
 
@@ -300,7 +300,7 @@ merkle root of the data returned by the DeliverTx requests, or both.
     .. code-block:: java
 
         /**
-         * Using Protobuf types from the protoc compiler, we always start with a byte[]
+         * Using proto types from the protoc compiler, we always start with a byte[]
          */
         ResponseDeliverTx deliverTx(RequestDeliverTx request) {
             byte[] transaction  = request.getTx().toByteArray();
